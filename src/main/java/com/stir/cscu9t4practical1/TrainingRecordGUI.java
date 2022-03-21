@@ -69,8 +69,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         dist.setEditable(true);
         add(addR);
         addR.addActionListener(this);
-        add(lookUpByDate);
-        lookUpByDate.addActionListener(this);
+
+        //commenting out the lookUpByDate button and replacing it with the findAllByDate button
+        //add(lookUpByDate);
+        //lookUpByDate.addActionListener(this);
 
         //adding findAllByDate button to GUI and in so doing, initialising the findAllByDate variable
         add(findAllByDate);
@@ -94,36 +96,82 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         if (event.getSource() == addR) {
             message = addEntry("generic");
         }
-        if (event.getSource() == lookUpByDate) {
-            message = lookupEntry();
-        }
+        //commenting out the lookUpByDate action listener event because it is being replaced with the findAllByDate listener and button.
+        //if (event.getSource() == lookUpByDate) {
+            //message = lookupEntry();
+        //}
         if (event.getSource() == findAllByDate){
-            message = "Not Implemented yet";
+            //message = "Not Implemented yet";
+            message = lookupEntry();
         }
         outputArea.setText(message);
         blankDisplay();
     } // actionPerformed
 
     public String addEntry(String what) {
-        String message = "Record added\n";
-        System.out.println("Adding "+what+" entry to the records");
         String n = name.getText();
-        int m = Integer.parseInt(month.getText());
-        int d = Integer.parseInt(day.getText());
-        int y = Integer.parseInt(year.getText());
-        float km = java.lang.Float.parseFloat(dist.getText());
-        int h = Integer.parseInt(hours.getText());
-        int mm = Integer.parseInt(mins.getText());
-        int s = Integer.parseInt(secs.getText());
-        Entry e = new Entry(n, d, m, y, h, mm, s, km);
-        myAthletes.addEntry(e);
-        return message;
+        int m;
+        int d;
+        int y;
+        int h;
+        int mm;
+        int s;
+        float km;
+
+        //improving the program so that it handles bad data in a sensible way instead of failing. - extension 4
+
+        try{
+            //let's try to convert our inputs to integers, otherwise we'll catch the exception and let the user know.
+            m = Integer.parseInt(month.getText());
+            d = Integer.parseInt(day.getText());
+            y = Integer.parseInt(year.getText());
+            //may as well make sure the h, mm, and s inputs are also integers.
+            h = Integer.parseInt(hours.getText());
+            mm = Integer.parseInt(mins.getText());
+            s = Integer.parseInt(secs.getText());
+        }catch(NumberFormatException exception) {
+            //we caught a number error! These ain't integers!
+            JOptionPane.showMessageDialog(null, "error: day, month, year, hour, minute, and second inputs must be integers!");
+            return "data insertion error, entry not added";
+        }
+
+        try {
+            km = java.lang.Float.parseFloat(dist.getText());
+        }catch(NumberFormatException numberFormatException){
+            //that's not a floating point number!
+            JOptionPane.showMessageDialog(null, "error: distance must be a floating point number!");
+            return "data insertion error, entry not added";
+        }
+
+        if (n.isBlank()){
+            JOptionPane.showMessageDialog(null, "error: entries must have a name!");
+            return "data insertion error, entry not added";
+        }
+
+        else{
+            Entry e = new Entry (n, d, m, y, h, mm, s, km);
+            myAthletes.addEntry(e);
+            return "record added";
+        }
     }
     
     public String lookupEntry() {
-        int m = Integer.parseInt(month.getText());
-        int d = Integer.parseInt(day.getText());
-        int y = Integer.parseInt(year.getText());
+        int m;
+        int d;
+        int y;
+
+        try{
+            //let's try to convert our inputs to integers, otherwise we'll catch the exception and let the user know.
+            m = Integer.parseInt(month.getText());
+            d = Integer.parseInt(day.getText());
+            y = Integer.parseInt(year.getText());
+        }catch(NumberFormatException exception) {
+            //we caught a number error! These ain't integers!
+            JOptionPane.showMessageDialog(null, "error: day, month, and year inputs must be integers!");
+            return "data insertion error, entry not looked up";
+        }
+
+
         outputArea.setText("looking up record ...");
         String message = myAthletes.lookupEntry(d, m, y);
         return message;
