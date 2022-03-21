@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="84ddc0c1-d389-4f9e-84c5-20ee185a9561" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecordGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecordGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecord.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +82,7 @@
       <workItem from="1647713338204" duration="48000" />
       <workItem from="1647713648767" duration="791000" />
       <workItem from="1647717312858" duration="124000" />
-      <workItem from="1647855860607" duration="7319000" />
+      <workItem from="1647855860607" duration="11005000" />
     </task>
     <servers />
   </component>
