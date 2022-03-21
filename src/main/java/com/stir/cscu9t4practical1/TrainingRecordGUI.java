@@ -3,9 +3,7 @@ package com.stir.cscu9t4practical1;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*;
 import javax.swing.*;
-import java.lang.Number;
 
 public class TrainingRecordGUI extends JFrame implements ActionListener {
 
@@ -27,9 +25,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JLabel labdist = new JLabel(" Distance (km):");
     private JButton addR = new JButton("Add");
     private JButton lookUpByDate = new JButton("Look Up");
-    //declaring FindAllByDate variable - extension 1
+    //declaring and initialising FindAllByDate variable - extension 1
     private JButton findAllByDate = new JButton("Find all by date");
-
+    //declaring and initialising entryType JComboBox variable -extension 8
+    private JComboBox entryTypeJComboBox = new JComboBox();
 
     private TrainingRecord myAthletes = new TrainingRecord();
 
@@ -67,6 +66,12 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         add(labdist);
         add(dist);
         dist.setEditable(true);
+
+        //adding the JComboBox to the GUI
+        add(entryTypeJComboBox);
+        //filling up the JComboBox with the three choices: run/sprint, swim, cycle
+        fillChoices(entryTypeJComboBox, new String[]{"run/sprints", "cycle", "swim"});
+
         add(addR);
         addR.addActionListener(this);
 
@@ -198,6 +203,16 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         mins.setText(String.valueOf(ent.getMin()));
         secs.setText(String.valueOf(ent.getSec()));
         dist.setText(String.valueOf(ent.getDistance()));
+    }
+
+    //adding a method that will fill the combobox.
+    public void fillChoices(JComboBox comboBox, String[] choices){
+        //make sure combobox is empty
+        comboBox.removeAllItems();
+        //fill that combo box.
+        for (int counter = 0; counter < choices.length; counter++){
+            comboBox.addItem(choices[counter]);
+        }
     }
 
 } // TrainingRecordGUI
