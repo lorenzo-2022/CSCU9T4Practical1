@@ -121,11 +121,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             //message = lookupEntry();
         //}
         if (event.getSource() == findAllByDate){
-            //message = "Not Implemented yet";
             message = lookupEntry();
         }
         if (event.getSource() == entryTypeJComboBox) {
-            //if the entry type changes, then I need to update the option 1 and 2 labels.
+            //if the entry type changes, then I need to update the option 1 and 2 labels and op 1 & 2 text fields.
             fillJTFOptions(entryTypeJComboBox, repetitions_where_terrain_JL, repetitions_where_terrain_JTF, recovery_none_tempo_JL, recovery_none_tempo_JTF);
         }
         outputArea.setText(message);
@@ -141,74 +140,6 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         int mm;
         int s;
         float km;
-
-        //adding the trainingType String to the TRGUI addEntry method so that when the addEntry button is pressed I know what
-        //the athlete's type of training was and deal with it.
-        String trainingType = (String) entryTypeJComboBox.getSelectedItem();
-        //getting results from the text fields
-        //run/sprint, cycle, swim and their respective options: repetitions/recovery (run/sprints) -terrain/tempo (cycle) - where/none (swim)
-        String repetitions_terrain_where;
-        String recovery_tempo_none;
-        repetitions_terrain_where = repetitions_where_terrain_JTF.getText();
-        recovery_tempo_none = recovery_none_tempo_JTF.getText();
-        //adding sensible data treatment for the text in the entry type jlabels
-        /** what to do here?*/
-        //have 3 scenarios, one for each type of data entry
-        //run/sprint, cycle, swim and their respective options: repetitions/recovery (run/sprints) -terrain/tempo (cycle) - where/none (swim)
-        //run/sprints
-        int repetitions;
-        int recovery;
-        if (trainingType.equals("run/sprints")){
-            //do stuff repetitions/recovery
-            //repetitions
-            try {
-                //convert repetitions to integer, if fail return the error to the user
-                repetitions = Integer.parseInt(repetitions_terrain_where);
-            } catch (NumberFormatException exceptionNum){
-                //uh oh spaghetti-o
-                JOptionPane.showMessageDialog(null, "repetitions input must be an integer that represents the number of repetitions!");
-                return "data insertion error, entry not added";
-            }
-            //recovery
-            try {
-                //convert recovery minutes String to Integer
-                recovery = Integer.parseInt(recovery_tempo_none);
-            } catch (NumberFormatException numExcep){
-                JOptionPane.showMessageDialog(null, "recovery time must be an Integer that represents minutes of recovery!");
-                return "data insertion error, entry not added";
-            }
-        }
-        //cycle
-        String terrain;
-        String tempo;
-        if (trainingType.equals("cycle")){
-            //do stuff terrain/tempo
-            //terrain
-            if (!(repetitions_terrain_where.equals("gravel") || repetitions_terrain_where.equals("mountain") || repetitions_terrain_where.equals("asphalt"))){
-                //then terrain is not of one of three accepted types
-                JOptionPane.showMessageDialog(null, "cycle terrain must be either: asphalt, gravel, or mountain.");
-                return "data insertion error, entry not added";
-            }
-            //tempo
-            if (!(recovery_tempo_none.equals("fast") || recovery_tempo_none.equals("moderate") || recovery_tempo_none.equals("slow"))){
-                //then tempo is not of one of the three accepted types!
-                JOptionPane.showMessageDialog(null, "cycle tempo must be either: fast, moderate, or slow.");
-                return "data insertion error, entry not added";
-            }
-        }
-        //swim
-        //where
-        //pool or outdoors?
-        String where;
-        if (trainingType.equals("swim")){
-            //do stuff where/none
-            //pool or outdoors
-            if (!(repetitions_terrain_where.equals("pool") || repetitions_terrain_where.equals("outdoors"))){
-                //then the where is not one of the accepted types: outdoor or pool
-                JOptionPane.showMessageDialog(null, "swim whereabouts must be either: pool, or outdoors.");
-                return "data insertion error, entry not added";
-            }
-        }
 
         //improving the program so that it handles bad data in a sensible way instead of failing. - extension 4
 
@@ -240,11 +171,97 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             return "data insertion error, entry not added";
         }
 
+        //adding the trainingType String to the TrainingRecord GUI addEntry method so that when the addEntry button is pressed I know what
+        //the athlete's type of training was and can deal that training type accordingly.
+        String trainingType = (String) entryTypeJComboBox.getSelectedItem();
+        //getting results from the text fields
+        String repetitions_terrain_where;
+        String recovery_tempo_none;
+        repetitions_terrain_where = repetitions_where_terrain_JTF.getText();
+        recovery_tempo_none = recovery_none_tempo_JTF.getText();
 
-        else{
-            Entry e = new Entry (n, d, m, y, h, mm, s, km);
+        //making sure the data entries are correct data
+        //calling addEntry method for depending on the entry type
+        //run/sprint, cycle, swim and their respective options: repetitions/recovery (run/sprints) -terrain/tempo (cycle) - where/none (swim)
+
+        //run/sprints
+        int repetitions;
+        int recovery;
+        if (trainingType.equals("run/sprints")){
+            //do stuff repetitions/recovery
+            //repetitions
+            try {
+                //convert repetitions to integer, if fail return the error to the user
+                repetitions = Integer.parseInt(repetitions_terrain_where);
+            } catch (NumberFormatException exceptionNum){
+                //uh oh spaghetti-o
+                JOptionPane.showMessageDialog(null, "repetitions input must be an integer that represents the number of repetitions!");
+                return "data insertion error, entry not added";
+            }
+            //recovery
+            try {
+                //convert recovery minutes String to Integer
+                recovery = Integer.parseInt(recovery_tempo_none);
+            } catch (NumberFormatException numExcep){
+                JOptionPane.showMessageDialog(null, "recovery time must be an Integer that represents minutes of recovery!");
+                return "data insertion error, entry not added";
+            }
+            //add run/sprints entry
+            SprintEntry sprint_run_entry = new SprintEntry(n, d, m, y, h, mm, s, km, repetitions, recovery);
+            myAthletes.addEntry(sprint_run_entry);
+            return "run/sprints record added";
+        }
+
+        //cycle
+        String terrain = repetitions_terrain_where;
+        String tempo = recovery_tempo_none;
+        if (trainingType.equals("cycle")){
+            //do stuff terrain/tempo
+            //terrain
+            if (!(repetitions_terrain_where.equals("gravel") || repetitions_terrain_where.equals("mountain") || repetitions_terrain_where.equals("asphalt"))){
+                //then terrain is not of one of three accepted types
+                JOptionPane.showMessageDialog(null, "cycle terrain must be either: asphalt, gravel, or mountain.");
+                return ("data insertion error, entry not added");
+            }
+            //tempo
+            if (!(recovery_tempo_none.equals("fast") || recovery_tempo_none.equals("moderate") || recovery_tempo_none.equals("slow"))){
+                //then tempo is not of one of the three accepted types!
+                JOptionPane.showMessageDialog(null, "cycle tempo must be either: fast, moderate, or slow.");
+                return ("data insertion error, entry not added");
+            }
+            else {
+                //add cycle entry
+                CycleEntry cycle_entry = new CycleEntry(n, d, m, y, h, mm, s, km, terrain, tempo);
+                myAthletes.addEntry(cycle_entry);
+                return ("cycle record added");
+            }
+        }
+
+        //swim
+        //where
+        //pool or outdoors?
+        String where = repetitions_terrain_where;
+        if (trainingType.equals("swim")){
+            //do stuff where/none
+            //pool or outdoors
+            if (!(repetitions_terrain_where.equals("pool") || repetitions_terrain_where.equals("outdoors"))){
+                //then the where is not one of the accepted types: outdoor or pool
+                JOptionPane.showMessageDialog(null, "swim whereabouts must be either: pool, or outdoors.");
+                return "data insertion error, entry not added";
+            }
+            else {
+                //add swim entry
+                SwimEntry swim_entry = new SwimEntry(n, d, m, y, s, mm, h, km, where);
+                myAthletes.addEntry(swim_entry);
+                return "swim record added";
+            }
+        }
+
+        //standard entry so that the junit tests for TrainingRecordGUITest still run when the addEntry method is called with an instance of a standard Entry object.
+        else {
+            Entry e = new Entry(n, d, m, y, h, mm, s, km);
             myAthletes.addEntry(e);
-            return "record added";
+            return what+"entry added";
         }
     }
     

@@ -1,5 +1,8 @@
 package com.stir.cscu9t4practical1;
 
+import javax.swing.*;
+import java.util.ListIterator;
+
 public class SprintEntry extends Entry {
     private int repetitions;
     private int recovery;
@@ -19,4 +22,5 @@ public class SprintEntry extends Entry {
     public int getRecovery () {
         return recovery;
     }
+
 }
