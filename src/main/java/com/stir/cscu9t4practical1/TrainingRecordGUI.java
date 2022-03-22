@@ -261,7 +261,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         else {
             Entry e = new Entry(n, d, m, y, h, mm, s, km);
             myAthletes.addEntry(e);
-            return what+"entry added";
+            return "Record added";
         }
     }
     
@@ -280,8 +280,6 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, "error: day, month, and year inputs must be integers!");
             return "data insertion error, entry not looked up";
         }
-
-
         outputArea.setText("looking up record ...");
         String message = myAthletes.lookupEntry(d, m, y);
         return message;
@@ -299,7 +297,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
 
     }// blankDisplay
     // Fills the input fields on the display for testing purposes only
-    public void fillDisplay(Entry ent) {
+    public void fillSprintEntryDisplay(SprintEntry ent) {
         name.setText(ent.getName());
         day.setText(String.valueOf(ent.getDay()));
         month.setText(String.valueOf(ent.getMonth()));
@@ -308,6 +306,8 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         mins.setText(String.valueOf(ent.getMin()));
         secs.setText(String.valueOf(ent.getSec()));
         dist.setText(String.valueOf(ent.getDistance()));
+        repetitions_where_terrain_JTF.setText(String.valueOf(ent.getRepetitions()));
+        recovery_none_tempo_JTF.setText(String.valueOf(ent.getRecovery()));
     }
 
     //adding a method that will fill the combobox.

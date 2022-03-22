@@ -6,7 +6,6 @@
  */
 package com.stir.cscu9t4practical1;
 
-import java.awt.event.ActionEvent;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,7 +17,6 @@ import java.util.*;
 // Only used if you want to use reflection to test private features
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import javax.swing.JButton;
 
 
@@ -88,11 +86,11 @@ public class TrainingRecordGUITest {
     public void testAddEntry(){
         System.out.println("addEntry");
         TrainingRecordGUI instance = new TrainingRecordGUI();
-        Entry entry = new Entry("Alice", 1, 2, 2003, 0, 16, 7, 3);
-        instance.fillDisplay(entry);
+        SprintEntry entry = new SprintEntry("Alice", 1, 2, 2003, 0, 16, 7, 3, 1, 0);
+        instance.fillSprintEntryDisplay(entry);
         String message = instance.addEntry("generic");
         System.out.println(message);
-        assertEquals(message,"Record added\n");
+        assertEquals(message,"run/sprints record added");
     }
     
     /**

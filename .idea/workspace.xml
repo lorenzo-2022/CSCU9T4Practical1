@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84ddc0c1-d389-4f9e-84c5-20ee185a9561" name="Changes" comment="fixing GUI addEntry method for TrainingRecordGUI class -- in the process of tasks 6 through 8. pushing from a mac - still have duplicate issue - still need to fix up entry super class (and probably addEntry method too) to deal with extra object attributes of the new entry subclasses">
+    <list default="true" id="84ddc0c1-d389-4f9e-84c5-20ee185a9561" name="Changes" comment="completing extensions/tasks 6-7-8 - pushing from a mac - still have duplicate addEntry issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/CycleEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/CycleEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/SprintEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/SprintEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/SwimEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/SwimEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SprintEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SprintEntryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SwimEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SwimEntryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/TrainingRecordGUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/TrainingRecordGUITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/TrainingRecordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/TrainingRecordTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/CycleEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/CycleEntry.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SprintEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SprintEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SwimEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SwimEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecordGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecordGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SprintEntryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SprintEntryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SwimEntryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SwimEntryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/TrainingRecordGUITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/TrainingRecordGUITest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/TrainingRecordTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/TrainingRecordTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +63,7 @@
       <recent name="com.stir.cscu9t4practical1" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TrainingRecordTest">
     <configuration name="TrainingRecordGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.TrainingRecordGUI" />
       <module name="CSCU9T4Practical1" />
@@ -65,6 +73,67 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SwimEntryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCU9T4Practical1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stir.cscu9t4practical1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
+      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.SwimEntryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrainingRecordGUITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCU9T4Practical1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stir.cscu9t4practical1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
+      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.TrainingRecordGUITest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrainingRecordGUITest.testAddEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCU9T4Practical1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stir.cscu9t4practical1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
+      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.TrainingRecordGUITest" />
+      <option name="METHOD_NAME" value="testAddEntry" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrainingRecordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCU9T4Practical1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stir.cscu9t4practical1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
+      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.TrainingRecordTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -82,7 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TrainingRecordTest" />
+        <item itemvalue="JUnit.TrainingRecordGUITest.testAddEntry" />
         <item itemvalue="Application.TrainingRecordGUI" />
+        <item itemvalue="JUnit.TrainingRecordGUITest" />
+        <item itemvalue="JUnit.SwimEntryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -98,7 +171,7 @@
       <workItem from="1647713648767" duration="791000" />
       <workItem from="1647717312858" duration="124000" />
       <workItem from="1647855860607" duration="20832000" />
-      <workItem from="1647948908239" duration="21400000" />
+      <workItem from="1647948908239" duration="26122000" />
     </task>
     <task id="LOCAL-00001" summary="in the process of tasks 6 through 8. pushing from a mac - still have duplicate issue - still need to fix up entry super class (and probably addEntry method too) to deal with extra object attributes of the new entry subclasses">
       <created>1647958092205</created>
@@ -121,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647962023542</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="completing extensions/tasks 6-7-8 - pushing from a mac - still have duplicate addEntry issue">
+      <created>1647971822876</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1647971822876</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +224,7 @@
     <MESSAGE value="in the process of tasks 6 through 8. pushing from a mac - still have duplicate issue - still need to fix up entry super class (and probably addEntry method too) to deal with extra object attributes of the new entry subclasses" />
     <MESSAGE value="adding data entry test too the different types of options for each sport entry type -- in the process of tasks 6 through 8. pushing from a mac - still have duplicate issue - still need to fix up entry super class (and probably addEntry method too) to deal with extra object attributes of the new entry subclasses" />
     <MESSAGE value="fixing GUI addEntry method for TrainingRecordGUI class -- in the process of tasks 6 through 8. pushing from a mac - still have duplicate issue - still need to fix up entry super class (and probably addEntry method too) to deal with extra object attributes of the new entry subclasses" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing GUI addEntry method for TrainingRecordGUI class -- in the process of tasks 6 through 8. pushing from a mac - still have duplicate issue - still need to fix up entry super class (and probably addEntry method too) to deal with extra object attributes of the new entry subclasses" />
+    <MESSAGE value="completing extensions/tasks 6-7-8 - pushing from a mac - still have duplicate addEntry issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="completing extensions/tasks 6-7-8 - pushing from a mac - still have duplicate addEntry issue" />
   </component>
 </project>

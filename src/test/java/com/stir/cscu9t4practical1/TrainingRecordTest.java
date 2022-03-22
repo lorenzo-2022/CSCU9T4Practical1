@@ -22,11 +22,11 @@ public class TrainingRecordTest {
     }
     
     @BeforeAll
-    public void setUpClass() {
+    public static void setUpClass() {
     }
     
     @AfterAll
-    public void tearDownClass() {
+    public static void tearDownClass() {
     }
     
     @BeforeEach
@@ -128,8 +128,8 @@ public class TrainingRecordTest {
         String expectResults = "Alice ran 3.0 km in 0:16:7 on 1/2/2003\n" + 
                                 "Bob ran 3.0 km in 0:14:15 on 1/2/2003\n";
         TrainingRecord instance = new TrainingRecord();
-        Entry a = new Entry("Alice", 1, 2, 2003, 0, 16, 7, 3);
-        Entry b = new Entry("Bob", 1, 2, 2003, 0, 14, 15, 3);
+        SprintEntry a = new SprintEntry("Alice", 1, 2, 2003, 0, 16, 7, 3, 2, 1);
+        SprintEntry b = new SprintEntry("Bob", 1, 2, 2003, 0, 14, 15, 3, 4, 2);
         instance.addEntry(a);
         instance.addEntry(b);
         fail("This method cannot be tested as it does not exist yet");
@@ -137,10 +137,10 @@ public class TrainingRecordTest {
         int m = 2;
         int y = 2003;
         // un-comment the lines below when you've implemented the method
-//        String resultSuccess = instance.lookupEntries(d,m,y);
-//        String resultNone = instance.lookupEntries(d,m,1999);
-//        assertEquals(expectResultsNone,resultNone);
-//        assertEquals(expectResults,resultSuccess);
+        String resultSuccess = instance.lookupEntry(d,m,y);
+        String resultNone = instance.lookupEntry(d,m,1999);
+        assertEquals(expectResultsNone,resultNone);
+        assertEquals(expectResults,resultSuccess);
     }
     
 }

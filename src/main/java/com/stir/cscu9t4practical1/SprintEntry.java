@@ -27,9 +27,9 @@ public class SprintEntry extends Entry {
     public String getEntry(){
         //do stuff
         if (repetitions > 1) {
-            String result = getName() + " ran " + getRepetitions() + "*" + getDistance() + " km sprints "
-                    + "(with " + getRecovery() + " minutes recovery between)"
-                    + " in " + getHour() + ":" + getMin() + ":" + getSec() + " on "
+            String result = getName() + " sprinted " + getRepetitions() + "x" + Math.round(getDistance()) + "m "
+                    + "in " + getHour() + ":" + getMin() + ":" + getSec()
+                    + " with " + getRecovery() + " minutes recovery on "
                     + getDay() + "/" + getMonth() + "/" + getYear() + "\n";
             return result;
         }
