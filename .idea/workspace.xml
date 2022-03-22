@@ -51,8 +51,7 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TrainingRecordTest">
-    <configuration name="TrainingRecordGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.TrainingRecordGUI" />
+    <configuration name="EntryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSCU9T4Practical1" />
       <extension name="coverage">
         <pattern>
@@ -60,6 +59,24 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
+      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.EntryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SprintEntryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCU9T4Practical1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stir.cscu9t4practical1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
+      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.SprintEntryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,22 +111,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TrainingRecordGUITest.testAddEntry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSCU9T4Practical1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.stir.cscu9t4practical1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
-      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.TrainingRecordGUITest" />
-      <option name="METHOD_NAME" value="testAddEntry" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TrainingRecordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSCU9T4Practical1" />
       <extension name="coverage">
@@ -139,10 +140,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TrainingRecordTest" />
-        <item itemvalue="JUnit.TrainingRecordGUITest.testAddEntry" />
-        <item itemvalue="Application.TrainingRecordGUI" />
         <item itemvalue="JUnit.TrainingRecordGUITest" />
         <item itemvalue="JUnit.SwimEntryTest" />
+        <item itemvalue="JUnit.SprintEntryTest" />
+        <item itemvalue="JUnit.EntryTest" />
       </list>
     </recent_temporary>
   </component>
