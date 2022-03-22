@@ -27,8 +27,13 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JButton lookUpByDate = new JButton("Look Up");
     //declaring and initialising FindAllByDate variable - extension 1
     private JButton findAllByDate = new JButton("Find all by date");
-    //declaring and initialising entryType JComboBox variable -extension 8
+    //declaring and initialising entryType JComboBox variable -extension 6-7-8
     private JComboBox entryTypeJComboBox = new JComboBox();
+    //declaring and initialing the combo boxes for the repetitions/recovery (run/sprints) - where/none (swim) - terrain/tempo (cycle)
+    private JLabel repetitions_where_terrain_JL = new JLabel();
+    private JTextField repetitions_where_terrain_JTF = new JTextField(6);
+    private JLabel recovery_none_tempo_JL = new JLabel();
+    private JTextField recovery_none_tempo_JTF = new JTextField(6);
 
     private TrainingRecord myAthletes = new TrainingRecord();
 
@@ -67,10 +72,20 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         add(dist);
         dist.setEditable(true);
 
-        //adding the JComboBox to the GUI
+        //adding the JComboBox for the sport entryType to the GUI, and also adding an action listener to it
         add(entryTypeJComboBox);
-        //filling up the JComboBox with the three choices: run/sprint, swim, cycle
-        fillChoices(entryTypeJComboBox, new String[]{"run/sprints", "cycle", "swim"});
+        entryTypeJComboBox.addActionListener(this);
+        //adding the labels and text fields for the repetitions/recovery (run/sprints) - where/none (swim) - terrain/tempo (cycle)
+        add(repetitions_where_terrain_JL);
+        add(repetitions_where_terrain_JTF);
+        add(recovery_none_tempo_JL);
+        add(recovery_none_tempo_JTF);
+        repetitions_where_terrain_JTF.setEditable(true);
+        recovery_none_tempo_JTF.setEditable(true);
+
+        //filling up the JComboBox with the three choices:
+        //run/sprint, swim, cycle and their respective options: repetitions/recovery (run/sprints) - where/none (swim) - terrain/tempo (cycle)
+        fillChoices(entryTypeJComboBox, repetitions_where_terrain_JL, repetitions_where_terrain_JTF, recovery_none_tempo_JL, recovery_none_tempo_JTF, new String[]{"run/sprints", "cycle", "swim"});
 
         add(addR);
         addR.addActionListener(this);
@@ -109,6 +124,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             //message = "Not Implemented yet";
             message = lookupEntry();
         }
+        if (event.getSource() == entryTypeJComboBox) {
+            //if the entry type changes, then I need to update the option 1 and 2 labels.
+            fillJTFOptions(entryTypeJComboBox, repetitions_where_terrain_JL, repetitions_where_terrain_JTF, recovery_none_tempo_JL, recovery_none_tempo_JTF);
+        }
         outputArea.setText(message);
         blankDisplay();
     } // actionPerformed
@@ -122,6 +141,12 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         int mm;
         int s;
         float km;
+        //adding the trainingType String to the TRGUI addEntry method so that when the addEntry button is pressed I know what
+        //the athlete's type of training was and deal with it.
+        String trainingType = (String) entryTypeJComboBox.getSelectedItem();
+        //getting results from other combo boxes.
+        /**hey, do stuff here
+         * i should overload add entry method in sublcasses I think*/
 
         //improving the program so that it handles bad data in a sensible way instead of failing. - extension 4
 
@@ -206,14 +231,43 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     }
 
     //adding a method that will fill the combobox.
-    public void fillChoices(JComboBox comboBox, String[] choices){
-        //make sure combobox is empty
-        comboBox.removeAllItems();
+    public void fillChoices(JComboBox comboBoxMain, JLabel option1Label, JTextField textFieldOption1, JLabel option2Label, JTextField textFieldOption2, String[] choices){
+        //emptying combo boxes
+        comboBoxMain.removeAllItems();
         //fill that combo box.
         for (int counter = 0; counter < choices.length; counter++){
-            comboBox.addItem(choices[counter]);
+            comboBoxMain.addItem(choices[counter]);
+        }
+        //calling a method that fills in the option 1 & 2 combo boxes
+        fillJTFOptions(comboBoxMain, option1Label, textFieldOption1, option2Label, textFieldOption2);
+    }
+
+    public void fillJTFOptions(JComboBox comboBoxMain, JLabel option1Label, JTextField Option1, JLabel option2Label, JTextField Option2){
+        //filling the optional comboboxes based on the contents of the main entry type combobox.
+        //repetitions/recovery (run/sprints) - terrain/tempo (cycle) - where/none (swim)
+        String entryType = (String) comboBoxMain.getSelectedItem();
+        //if entry type is run/sprints
+        if (entryType.equals("run/sprints")){
+            //do this
+            option1Label.setText("repetitions");
+            option2Label.setText("recovery");
+        }
+        //if entry type is  swim
+        if (entryType.equals("cycle")){
+            //do this
+            option1Label.setText("terrain");
+            option2Label.setText("tempo");
+        }
+        //if entry type is cycle
+        if (entryType.equals("swim")){
+            //do this
+            option1Label.setText("where");
+            option2Label.setText("none");
+            Option2.setEditable(false);
         }
     }
+
+
 
 } // TrainingRecordGUI
 

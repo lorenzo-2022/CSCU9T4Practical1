@@ -4,10 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84ddc0c1-d389-4f9e-84c5-20ee185a9561" name="Changes" comment="">
+    <list default="true" id="84ddc0c1-d389-4f9e-84c5-20ee185a9561" name="Changes" comment="in the process of doing step 6">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCU9T4Practical1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CSCU9T4Practical1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nb-configuration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nb-configuration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/CycleEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/CycleEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/SprintEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/SprintEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/SwimEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/SwimEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/CycleEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/CycleEntryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/EntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/EntryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SprintEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SprintEntryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SwimEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SwimEntryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/TrainingRecordGUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/TrainingRecordGUITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/TrainingRecordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/TrainingRecordTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/CycleEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/CycleEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/Entry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SprintEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SprintEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SwimEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SwimEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecord.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecordGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecordGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/CycleEntryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/CycleEntryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/EntryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/EntryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SprintEntryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SprintEntryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SwimEntryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SwimEntryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/TrainingRecordGUITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/TrainingRecordGUITest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/TrainingRecordTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/TrainingRecordTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +62,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="26cC9FxcDUY89U1qHBsFema9v84" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,7 +79,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../week 2 XML/week 2 xml win10" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -83,6 +132,7 @@
       <workItem from="1647713648767" duration="791000" />
       <workItem from="1647717312858" duration="124000" />
       <workItem from="1647855860607" duration="20832000" />
+      <workItem from="1647948908239" duration="7657000" />
     </task>
     <servers />
   </component>
@@ -99,5 +149,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="in the process of doing step 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="in the process of doing step 6" />
   </component>
 </project>
