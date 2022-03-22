@@ -124,19 +124,17 @@ public class TrainingRecordTest {
     @Test
     public void testLookupEntries() {
         System.out.println("lookupEntries");
-        String expectResultsNone = "Sorry couldn't find anything for this date";
-        String expectResults = "Alice ran 3.0 km in 0:16:7 on 1/2/2003\n" + 
-                                "Bob ran 3.0 km in 0:14:15 on 1/2/2003\n";
+        String expectResultsNone = "No entries found";
+        String expectResults = "Alice sprinted 2x30m in 0:16:7 with 2 minutes recovery on 1/2/2003\n" +
+                                "Bob sprinted 4x30m in 0:14:15 with 3 minutes recovery on 1/2/2003\n";
         TrainingRecord instance = new TrainingRecord();
-        SprintEntry a = new SprintEntry("Alice", 1, 2, 2003, 0, 16, 7, 3, 2, 1);
-        SprintEntry b = new SprintEntry("Bob", 1, 2, 2003, 0, 14, 15, 3, 4, 2);
+        SprintEntry a = new SprintEntry("Alice", 1, 2, 2003, 0, 16, 7, 30, 2, 2);
+        SprintEntry b = new SprintEntry("Bob", 1, 2, 2003, 0, 14, 15, 30, 4, 3);
         instance.addEntry(a);
         instance.addEntry(b);
-        fail("This method cannot be tested as it does not exist yet");
         int d = 1;
         int m = 2;
         int y = 2003;
-        // un-comment the lines below when you've implemented the method
         String resultSuccess = instance.lookupEntry(d,m,y);
         String resultNone = instance.lookupEntry(d,m,1999);
         assertEquals(expectResultsNone,resultNone);
