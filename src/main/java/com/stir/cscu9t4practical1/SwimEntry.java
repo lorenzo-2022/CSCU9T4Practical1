@@ -11,4 +11,23 @@ public class SwimEntry extends Entry {
     //setting getter methods for attributes that are not in parent class
     //where getter
     public String getWhere(){return where;}
+
+    //over-ridden methods from parent class: Entry
+    public String getEntry(){
+        //do stuff
+        if (where.equals("outdoors")) {
+            String result = getName() + " swam " + getDistance() + " km "
+                    + where + " in "
+                    + getHour() + ":" + getMin() + ":" + getSec() + " on "
+                    + getDay() + "/" + getMonth() + "/" + getYear() + "\n";
+            return result;
+        }
+        else{
+            String result = getName() + " swam " + getDistance() + " km "
+                    + " at the " + where
+                    + " in " + getHour() + ":" + getMin() + ":" + getSec() + " on "
+                    + getDay() + "/" + getMonth() + "/" + getYear() + "\n";
+            return result;
+        }
+    }
 }

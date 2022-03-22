@@ -18,4 +18,15 @@ public class CycleEntry extends Entry {
 
     //get tempo
     public String getTempo () {return tempo;}
+
+    //over-ridden methods from parent class: Entry
+    public String getEntry(){
+        //do stuff
+        String result = getName()+" cycled " + getDistance() + " km "
+                +"at a " + tempo + " tempo "
+                +"on " + terrain + " terrain "
+                +"in " + getHour()+":"+getMin()+":"+ getSec() + " on "
+                +getDay()+"/"+getMonth()+"/"+getYear()+"\n";
+        return result;
+    }
 }

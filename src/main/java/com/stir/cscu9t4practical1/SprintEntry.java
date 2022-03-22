@@ -23,4 +23,22 @@ public class SprintEntry extends Entry {
         return recovery;
     }
 
+    //over-ridden methods from parent class: Entry
+    public String getEntry(){
+        //do stuff
+        if (repetitions > 1) {
+            String result = getName() + " ran " + getRepetitions() + "*" + getDistance() + " km sprints "
+                    + "(with " + getRecovery() + " minutes recovery between)"
+                    + " in " + getHour() + ":" + getMin() + ":" + getSec() + " on "
+                    + getDay() + "/" + getMonth() + "/" + getYear() + "\n";
+            return result;
+        }
+
+        else {
+            String result = getName() + " ran " + getDistance() + " km "
+                    + " in " + getHour() + ":" + getMin() + ":" + getSec() + " on "
+                    + getDay() + "/" + getMonth() + "/" + getYear() + "\n";
+            return result;
+        }
+    }
 }
