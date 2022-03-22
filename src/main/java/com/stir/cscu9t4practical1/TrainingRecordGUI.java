@@ -251,23 +251,26 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             //do this
             option1Label.setText("repetitions");
             option2Label.setText("recovery");
+            Option2.setText("");
+            Option2.setEditable(true);
         }
         //if entry type is  swim
         if (entryType.equals("cycle")){
             //do this
             option1Label.setText("terrain");
             option2Label.setText("tempo");
+            Option2.setText("");
+            Option2.setEditable(true);
         }
         //if entry type is cycle
         if (entryType.equals("swim")){
             //do this
             option1Label.setText("where");
-            option2Label.setText("none");
+            option2Label.setText("");
+            Option2.setText("no_option");
             Option2.setEditable(false);
         }
     }
-
-
 
 } // TrainingRecordGUI
 
