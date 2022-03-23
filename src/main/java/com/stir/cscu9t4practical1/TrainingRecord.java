@@ -48,7 +48,19 @@ public class TrainingRecord {
        }
        return result;
    } // lookupEntry
-   
+
+    // look up entry of a given name
+    public String findAllByName(String inputName) {
+        String result = "";
+        for (Entry current : tr) {
+            if (current.getName().equals(inputName)) {
+                result = result + current.getEntry();
+            }
+        }
+        if (result.equals("")) { return "No entries found"; }
+        return result;
+    }
+
    // Count the number of entries
    public int getNumberOfEntries(){
        return tr.size();
@@ -57,5 +69,5 @@ public class TrainingRecord {
    public void clearAllEntries(){
        tr.clear();
    }
-   
+
 } // TrainingRecord

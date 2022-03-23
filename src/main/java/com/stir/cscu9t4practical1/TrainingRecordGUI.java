@@ -29,11 +29,13 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JButton findAllByDate = new JButton("Find all by date");
     //declaring and initialising entryType JComboBox variable -extension 6-7-8
     private JComboBox entryTypeJComboBox = new JComboBox();
-    //declaring and initialing the combo boxes for the repetitions/recovery (run/sprints) - where/none (swim) - terrain/tempo (cycle)
+    //declaring and initialising the combo boxes for the repetitions/recovery (run/sprints) - where/none (swim) - terrain/tempo (cycle)
     private JLabel repetitions_where_terrain_JL = new JLabel();
     private JTextField repetitions_where_terrain_JTF = new JTextField(6);
     private JLabel recovery_none_tempo_JL = new JLabel();
     private JTextField recovery_none_tempo_JTF = new JTextField(6);
+    //declaring and initialising findAllByName button
+    private JButton findAllByName = new JButton("Find all by name");
 
     private TrainingRecord myAthletes = new TrainingRecord();
 
@@ -99,6 +101,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         //adding action listen to the findAllByDate button
         findAllByDate.addActionListener(this);
 
+        //adding the findAllByName button
+        add(findAllByName);
+        findAllByName.addActionListener(this);
+
         add(outputArea);
         outputArea.setEditable(false);
         setSize(720, 200);
@@ -126,6 +132,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         if (event.getSource() == entryTypeJComboBox) {
             //if the entry type changes, then I need to update the option 1 and 2 labels and op 1 & 2 text fields.
             fillJTFOptions(entryTypeJComboBox, repetitions_where_terrain_JL, repetitions_where_terrain_JTF, recovery_none_tempo_JL, recovery_none_tempo_JTF);
+        }
+        if (event.getSource() == findAllByName) {
+            //find by name button is pressed so return entries with named searched
+            message = findAllByName();
         }
         outputArea.setText(message);
         blankDisplay();
@@ -282,6 +292,15 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         }
         outputArea.setText("looking up record ...");
         String message = myAthletes.lookupEntry(d, m, y);
+        return message;
+    }
+
+    //implementing the find all entries by a given name method from task/extension 9
+    public String findAllByName () {
+        //find all by name --> get the user name input --> call findAllByName method from TrainingRecord on myAthletes object --> return message
+        String inputName = name.getText();
+        outputArea.setText("looking up record ...");
+        String message = myAthletes.findAllByName(inputName);
         return message;
     }
 
