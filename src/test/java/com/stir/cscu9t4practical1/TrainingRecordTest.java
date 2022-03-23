@@ -10,7 +10,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -88,9 +88,9 @@ public class TrainingRecordTest {
         int d = 7;
         int m = 3;
         int y = 2010;
-        String result = instance.lookupEntry(d, m, y);
+        String result = instance.lookupEntryByDate(d, m, y);
         assertNotEquals(expResult, result, "expecting to find the entry");
-        result = instance.lookupEntry(1, 2, 1999);
+        result = instance.lookupEntryByDate(1, 2, 1999);
         assertEquals(expResult, result, "expecting to not find the entry");
     }
     
@@ -135,8 +135,8 @@ public class TrainingRecordTest {
         int d = 1;
         int m = 2;
         int y = 2003;
-        String resultSuccess = instance.lookupEntry(d,m,y);
-        String resultNone = instance.lookupEntry(d,m,1999);
+        String resultSuccess = instance.lookupEntryByDate(d,m,y);
+        String resultNone = instance.lookupEntryByDate(d,m,1999);
         assertEquals(expectResultsNone,resultNone);
         assertEquals(expectResults,resultSuccess);
     }

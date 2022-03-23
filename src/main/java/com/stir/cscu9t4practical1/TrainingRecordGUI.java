@@ -36,6 +36,8 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JTextField recovery_none_tempo_JTF = new JTextField(6);
     //declaring and initialising findAllByName button
     private JButton findAllByName = new JButton("Find all by name");
+    //declaring and initialising remove button
+    private JButton removeButton = new JButton("Remove entry");
 
     private TrainingRecord myAthletes = new TrainingRecord();
 
@@ -92,6 +94,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         add(addR);
         addR.addActionListener(this);
 
+        //adding the remove entry button
+        add(removeButton);
+        removeButton.addActionListener(this);
+
         //commenting out the lookUpByDate button and replacing it with the findAllByDate button
         //add(lookUpByDate);
         //lookUpByDate.addActionListener(this);
@@ -122,12 +128,15 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         if (event.getSource() == addR) {
             message = addEntry("generic");
         }
+        if (event.getSource() == removeButton) {
+            message = removeEntry();
+        }
         //commenting out the lookUpByDate action listener event because it is being replaced with the findAllByDate listener and button.
         //if (event.getSource() == lookUpByDate) {
             //message = lookupEntry();
         //}
         if (event.getSource() == findAllByDate){
-            message = lookupEntry();
+            message = lookupEntryByDate();
         }
         if (event.getSource() == entryTypeJComboBox) {
             //if the entry type changes, then I need to update the option 1 and 2 labels and op 1 & 2 text fields.
@@ -274,8 +283,30 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             return "Record added";
         }
     }
+
+    //implementing the remove entry method
+    private String removeEntry() {
+        String inputName = name.getText();
+        int m;
+        int d;
+        int y;
+
+        try{
+            //let's try to convert our inputted numbers to integers, otherwise we'll catch the exception and let the user know.
+            m = Integer.parseInt(month.getText());
+            d = Integer.parseInt(day.getText());
+            y = Integer.parseInt(year.getText());
+        }catch(NumberFormatException exception) {
+            //we caught a number error! These ain't integers!
+            JOptionPane.showMessageDialog(null, "error: day, month, and year inputs must be integers!");
+            return "data insertion error, entry not removed";
+        }
+
+        String message = myAthletes.removeEntry(inputName, m, d, y);
+        return message;
+    }
     
-    public String lookupEntry() {
+    public String lookupEntryByDate() {
         int m;
         int d;
         int y;
@@ -291,7 +322,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             return "data insertion error, entry not looked up";
         }
         outputArea.setText("looking up record ...");
-        String message = myAthletes.lookupEntry(d, m, y);
+        String message = myAthletes.lookupEntryByDate(d, m, y);
         return message;
     }
 
