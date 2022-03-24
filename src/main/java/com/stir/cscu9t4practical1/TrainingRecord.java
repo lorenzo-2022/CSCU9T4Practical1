@@ -32,11 +32,6 @@ public class TrainingRecord {
         while (recordIterator.hasNext()) {
             Entry currentRecord = recordIterator.next();
 
-            System.out.println(currentRecord.getName()+" vs entry: "+entry.getName()+"\n"+
-                    currentRecord.getDay()+ " vs entry day: "+ entry.getDay()+"\n"+
-                    currentRecord.getMonth()+ " vs entry month: " + entry.getMonth()+"\n"+
-                    currentRecord.getYear() + " vs entry year: "+entry.getYear()+"\n");
-
             if (currentRecord.getName().equals(entry.getName()) &&
                     currentRecord.getDay() == entry.getDay() &&
                     currentRecord.getMonth() == entry.getMonth() &&

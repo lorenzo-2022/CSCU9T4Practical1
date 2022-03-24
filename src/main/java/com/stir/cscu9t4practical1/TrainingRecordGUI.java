@@ -97,6 +97,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         //adding the remove entry button
         add(removeButton);
         removeButton.addActionListener(this);
+        removeButton.setEnabled(false);
 
         //commenting out the lookUpByDate button and replacing it with the findAllByDate button
         //add(lookUpByDate);
@@ -106,10 +107,12 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         add(findAllByDate);
         //adding action listen to the findAllByDate button
         findAllByDate.addActionListener(this);
+        findAllByDate.setEnabled(false);
 
         //adding the findAllByName button
         add(findAllByName);
         findAllByName.addActionListener(this);
+        findAllByName.setEnabled(false);
 
         add(outputArea);
         outputArea.setEditable(false);
@@ -148,7 +151,32 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         }
         outputArea.setText(message);
         blankDisplay();
+
+        //every time an action is performed I want to check if the RemoveEntry, Find by date, and Find by name button can be enabled.
+        enableButtons();
     } // actionPerformed
+
+    private void enableButtons() {
+        if (oneOrMoreEntries()){
+            //then enable buttons
+            removeButton.setEnabled(true);
+            findAllByDate.setEnabled(true);
+            findAllByName.setEnabled(true);
+        }
+        else {
+            removeButton.setEnabled(false);
+            findAllByDate.setEnabled(false);
+            findAllByName.setEnabled(false);
+        }
+    }
+
+    private boolean oneOrMoreEntries() {
+        boolean oneOrMoreEntries = false;
+        if (myAthletes.getNumberOfEntries() > 0){
+            oneOrMoreEntries = true;
+        }
+        return oneOrMoreEntries;
+    }
 
     public String addEntry(String what) {
         String n = name.getText();
@@ -160,7 +188,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         int s;
         float km;
 
-        //improving the program so that it handles bad data in a sensible way instead of failing. - extension 4
+        //improving the program so that it handles bad data in a sensible way instead of failing. - task 4
 
         try{
             //let's try to convert our inputs to integers, otherwise we'll catch the exception and let the user know.
