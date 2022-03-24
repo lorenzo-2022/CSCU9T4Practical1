@@ -141,7 +141,7 @@ public class TrainingRecord {
                     //first figure out the type, then add the distance to the total weekly distance for that type of entry/activity
                     //You can make a logical test as to the type of particular object using the instanceof operator.
                     if (record instanceof SprintEntry) {
-                        //if the repetitions are 1 then the distance is in kilometres
+                        //if the repetitions are more than 1 then the distance is in metres
                         int reps = ((SprintEntry) record).getRepetitions();
                         if (reps > 1) {
                             //then distance is in metres and there are repetitions
