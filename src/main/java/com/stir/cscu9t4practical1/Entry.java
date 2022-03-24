@@ -14,7 +14,16 @@ public class Entry {
     dateAndTime = inst;
     distance = dist;
   } //constructor
-  
+
+  //a method to identify the type of entry: necessary for the child classes for task 14
+  public Object getType() {
+    return "generic";
+  }
+
+  public Calendar getCalendar () {
+    return dateAndTime;
+  } //getCalendar
+
   public String getName () {
     return name;
   } //getName
@@ -46,7 +55,7 @@ public class Entry {
 
   public float getDistance () {
     return distance;
-  } //getYear
+  } //getDistance
 
   public String getEntry () {
    String result = getName()+" ran " + getDistance() + " km in "
@@ -54,5 +63,5 @@ public class Entry {
              +getDay()+"/"+getMonth()+"/"+getYear()+"\n";
    return result;
   } //getEntry
-   
+
 } // Entry

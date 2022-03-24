@@ -9,8 +9,14 @@ public class SwimEntry extends Entry {
     }
 
     //setting getter methods for attributes that are not in parent class
+
     //where getter
     public String getWhere(){return where;}
+
+    //a method to identify this type of entry
+    public String getType () {
+        return "swim";
+    }
 
     //over-ridden methods from parent class: Entry
     public String getEntry(){

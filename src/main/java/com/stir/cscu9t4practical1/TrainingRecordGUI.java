@@ -22,7 +22,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JLabel labh = new JLabel(" Hours:");
     private JLabel labmm = new JLabel(" Mins:");
     private JLabel labs = new JLabel(" Secs:");
-    private JLabel labdist = new JLabel(" Distance (km):");
+    private JLabel labdist = new JLabel(" Distance (km/m if reps):");
     private JButton addR = new JButton("Add");
     private JButton lookUpByDate = new JButton("Look Up");
     //declaring and initialising FindAllByDate variable - extension 1
@@ -38,6 +38,8 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JButton findAllByName = new JButton("Find all by name");
     //declaring and initialising remove button
     private JButton removeButton = new JButton("Remove entry");
+    //declaring the weekly and initialising the weekly distance button
+    private JButton weeklyDistanceButton = new JButton("Weekly distance");
 
     private TrainingRecord myAthletes = new TrainingRecord();
 
@@ -114,6 +116,11 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         findAllByName.addActionListener(this);
         findAllByName.setEnabled(false);
 
+        //adding the weekly distance button
+        add(weeklyDistanceButton);
+        weeklyDistanceButton.addActionListener(this);
+        weeklyDistanceButton.setEnabled(false);
+
         add(outputArea);
         outputArea.setEditable(false);
         setSize(720, 200);
@@ -149,6 +156,14 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             //find by name button is pressed so return entries with named searched
             message = findAllByName();
         }
+        if (event.getSource() == weeklyDistanceButton) {
+            //program should display all records for the named person for the last seven days (including today)
+            //will need to investigate the Calendar class more to fully implement this part
+            //now you have all the right records, you just need to calculate the total number of distance for each class of exercise (run, cycle, swim)
+            //for that person for this week. Add to the weekly distance? output the distance this week, be sure to put the right strings together.
+            message = weeklyDistance();
+        }
+
         outputArea.setText(message);
         blankDisplay();
 
@@ -156,17 +171,28 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         enableButtons();
     } // actionPerformed
 
+    private String weeklyDistance() {
+        String message = "";
+        String athleteName = name.getText();
+
+        message = myAthletes.findWeeklyDistance(athleteName);
+
+        return message;
+    }
+
     private void enableButtons() {
         if (oneOrMoreEntries()){
             //then enable buttons
             removeButton.setEnabled(true);
             findAllByDate.setEnabled(true);
             findAllByName.setEnabled(true);
+            weeklyDistanceButton.setEnabled(true);
         }
         else {
             removeButton.setEnabled(false);
             findAllByDate.setEnabled(false);
             findAllByName.setEnabled(false);
+            weeklyDistanceButton.setEnabled(false);
         }
     }
 

@@ -110,4 +110,78 @@ public class TrainingRecord {
         result = result + "Removed entry: " + removedEntryString + "\n";
         return result;
     }
+
+    public String findWeeklyDistance(String athleteName) {
+        String weekRecords = "";
+
+        float weekRunDistance = 0;
+        float weekCycleDistance = 0;
+        float weekSwimDistance = 0;
+
+        //Calendar's getInstance method returns a Calendar object whose calendar fields have been initialized with the current date and time.
+        //current date and time
+        Calendar rightNow = Calendar.getInstance();
+        //Calendar's add method adds or subtracts the specified amount of time to the given calendar field
+        rightNow.add(Calendar.DATE, -7);
+        Calendar aWeekAgo = rightNow;
+
+        //a for each loop --> for each element in the list
+        for (Entry record : trainingRecord){
+            if (record.getName().equals(athleteName)){
+                //then its one of athleteName's training records
+                //now I need to figure out if the athleteName's record is from the last 7 days, including today
+                Calendar recordDateAndTime = record.getCalendar();
+
+                //Returns whether this Calendar represents a time after the time represented by the specified Object.
+                if (recordDateAndTime.after(aWeekAgo) && recordDateAndTime.before(rightNow)) {
+                    //then the record is from the last 7 days, and I need to add it to the output
+                    weekRecords = weekRecords + record.getEntry();
+
+                    //now I need to figure out the type of activity so that I can add the distance of the activity to the total weekly distance for that activity
+                    //first figure out the type, then add the distance to the total weekly distance for that type of entry/activity
+                    //You can make a logical test as to the type of particular object using the instanceof operator.
+                    if (record instanceof SprintEntry) {
+                        //if the repetitions are 1 then the distance is in kilometres
+                        int reps = ((SprintEntry) record).getRepetitions();
+                        if (reps > 1) {
+                            //then distance is in metres and there are repetitions
+                            float runRecordDistanceMetres = record.getDistance() * ((SprintEntry) record).getRepetitions();
+                            float runRecordDistanceKM = metresToKilometres(runRecordDistanceMetres);
+                            weekRunDistance += runRecordDistanceKM;
+                        }
+                        else {
+                            //the distance is in km
+                            weekRunDistance += record.getDistance();
+                        }
+                    }
+                    else if (record instanceof CycleEntry) {
+                        weekCycleDistance += record.getDistance();
+                    }
+                    else if (record instanceof SwimEntry) {
+                        weekSwimDistance += record.getDistance();
+                    }
+                }
+            }
+        }
+
+        String weekDistances = "Over the last week " + athleteName
+                + " ran " + weekRunDistance + "km, "
+                + "cycled " + weekCycleDistance + "km, "
+                + "and swam " + weekSwimDistance + "km. \n";
+
+        String output = weekDistances + weekRecords;
+
+        //return the output message so that the program displays all records for the named person for the last seven days (including today)
+        if (athleteName.isBlank()) {
+            return "Athlete name is blank!";
+        }
+        else {
+            return output;
+        }
+    }
+
+    public float metresToKilometres (float metres) {
+        float kilometres = metres / 1000;
+        return kilometres;
+    }
 } // TrainingRecord

@@ -19,6 +19,11 @@ public class CycleEntry extends Entry {
     //get tempo
     public String getTempo () {return tempo;}
 
+    //a method to identify this type of entry
+    public String getType () {
+        return "cycle";
+    }
+
     //over-ridden methods from parent class: Entry
     public String getEntry(){
         //do stuff

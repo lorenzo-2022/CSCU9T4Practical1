@@ -14,6 +14,7 @@ public class SprintEntry extends Entry {
     }
 
     //setting getter methods for attributes that are not in parent class
+
     //repetitions getter
     public int getRepetitions () {
         return repetitions;
@@ -21,6 +22,11 @@ public class SprintEntry extends Entry {
     //recovery getter
     public int getRecovery () {
         return recovery;
+    }
+
+    //a method to identify this type of entry
+    public String getType () {
+        return "run";
     }
 
     //over-ridden methods from parent class: Entry
