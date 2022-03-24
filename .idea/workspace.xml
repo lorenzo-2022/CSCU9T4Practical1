@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84ddc0c1-d389-4f9e-84c5-20ee185a9561" name="Changes" comment="task 11 add a remove entry button - still have duplicate entry issue: if user tries to remove 2 identical entries only 1 is removed. I must make it so there cannot be identical entries. - My TrainingRecord removeEntry method was buggy so I ended up comparing to what someone else had done and decided to use a null entry object reference variable to point to the entry object in my list that needed to be removed, and then removing the entry after iterating throught the list of records at the end of the removeEntry method.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="84ddc0c1-d389-4f9e-84c5-20ee185a9561" name="Changes" comment="fixed duplicate entry issue (repeat after me: .equals() to compare Strings, not ==) - task 12 test your work is complete: all the tests run successfully">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecordGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecordGUI.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +158,7 @@
       <workItem from="1647855860607" duration="20832000" />
       <workItem from="1647948908239" duration="27246000" />
       <workItem from="1648057413384" duration="59000" />
-      <workItem from="1648057555902" duration="8570000" />
+      <workItem from="1648057555902" duration="9039000" />
     </task>
     <task id="LOCAL-00001" summary="in the process of tasks 6 through 8. pushing from a mac - still have duplicate issue - still need to fix up entry super class (and probably addEntry method too) to deal with extra object attributes of the new entry subclasses">
       <created>1647958092205</created>
@@ -220,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648062711643</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed duplicate entry issue (repeat after me: .equals() to compare Strings, not ==) - task 12 test your work is complete: all the tests run successfully">
+      <created>1648120987117</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1648120987117</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +285,7 @@
     <MESSAGE value="fixing the test classes and making things output correctly - task 8 - pushing from a mac - still have duplicate addEntry issue" />
     <MESSAGE value="task 9 - still have duplicate entry issue" />
     <MESSAGE value="task 11 add a remove entry button - still have duplicate entry issue: if user tries to remove 2 identical entries only 1 is removed. I must make it so there cannot be identical entries. - My TrainingRecord removeEntry method was buggy so I ended up comparing to what someone else had done and decided to use a null entry object reference variable to point to the entry object in my list that needed to be removed, and then removing the entry after iterating throught the list of records at the end of the removeEntry method." />
-    <option name="LAST_COMMIT_MESSAGE" value="task 11 add a remove entry button - still have duplicate entry issue: if user tries to remove 2 identical entries only 1 is removed. I must make it so there cannot be identical entries. - My TrainingRecord removeEntry method was buggy so I ended up comparing to what someone else had done and decided to use a null entry object reference variable to point to the entry object in my list that needed to be removed, and then removing the entry after iterating throught the list of records at the end of the removeEntry method." />
+    <MESSAGE value="fixed duplicate entry issue (repeat after me: .equals() to compare Strings, not ==) - task 12 test your work is complete: all the tests run successfully" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed duplicate entry issue (repeat after me: .equals() to compare Strings, not ==) - task 12 test your work is complete: all the tests run successfully" />
   </component>
 </project>

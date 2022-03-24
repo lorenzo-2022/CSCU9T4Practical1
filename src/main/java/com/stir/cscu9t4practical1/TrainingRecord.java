@@ -32,7 +32,6 @@ public class TrainingRecord {
         while (recordIterator.hasNext()) {
             Entry currentRecord = recordIterator.next();
 
-            //troubleshooting
             System.out.println(currentRecord.getName()+" vs entry: "+entry.getName()+"\n"+
                     currentRecord.getDay()+ " vs entry day: "+ entry.getDay()+"\n"+
                     currentRecord.getMonth()+ " vs entry month: " + entry.getMonth()+"\n"+
@@ -43,10 +42,8 @@ public class TrainingRecord {
                     currentRecord.getMonth() == entry.getMonth() &&
                     currentRecord.getYear() == entry.getYear()){
                 isUnique = false;
-                System.out.println(isUnique); //this false is not getting triggered!!!
             }
         }
-        System.out.println(isUnique);
         return isUnique;
     }
    
