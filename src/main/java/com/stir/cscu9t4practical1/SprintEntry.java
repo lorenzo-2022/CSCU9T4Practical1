@@ -24,11 +24,6 @@ public class SprintEntry extends Entry {
         return recovery;
     }
 
-    //a method to identify this type of entry
-    public String getType () {
-        return "run";
-    }
-
     //over-ridden methods from parent class: Entry
     public String getEntry(){
         //do stuff

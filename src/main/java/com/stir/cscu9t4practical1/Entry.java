@@ -6,7 +6,7 @@ public class Entry {
   private String name;
   private Calendar dateAndTime;
   private float distance;
-  
+
   public Entry (String n, int d, int m, int y, int h, int min, int s, float dist) {
     name = n;
     Calendar inst = Calendar.getInstance();
@@ -14,11 +14,6 @@ public class Entry {
     dateAndTime = inst;
     distance = dist;
   } //constructor
-
-  //a method to identify the type of entry: necessary for the child classes for task 14
-  public Object getType() {
-    return "generic";
-  }
 
   public Calendar getCalendar () {
     return dateAndTime;

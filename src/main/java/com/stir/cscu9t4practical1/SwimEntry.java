@@ -13,11 +13,6 @@ public class SwimEntry extends Entry {
     //where getter
     public String getWhere(){return where;}
 
-    //a method to identify this type of entry
-    public String getType () {
-        return "swim";
-    }
-
     //over-ridden methods from parent class: Entry
     public String getEntry(){
         //do stuff
