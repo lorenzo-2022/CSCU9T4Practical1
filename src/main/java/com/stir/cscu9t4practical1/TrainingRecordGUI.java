@@ -221,7 +221,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             try {
                 //convert recovery minutes String to Integer
                 recovery = Integer.parseInt(recovery_tempo_none);
-            } catch (NumberFormatException numExcep){
+            } catch (NumberFormatException numberFormatException){
                 JOptionPane.showMessageDialog(null, "recovery time must be an Integer that represents minutes of recovery!");
                 return "data insertion error, entry not added";
             }
@@ -298,7 +298,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             y = Integer.parseInt(year.getText());
         }catch(NumberFormatException exception) {
             //we caught a number error! These ain't integers!
-            JOptionPane.showMessageDialog(null, "error: day, month, and year inputs must be integers!");
+            JOptionPane.showMessageDialog(null, "entry not removed error: day, month, and year inputs must be integers!");
             return "data insertion error, entry not removed";
         }
 
@@ -318,7 +318,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             y = Integer.parseInt(year.getText());
         }catch(NumberFormatException exception) {
             //we caught a number error! These ain't integers!
-            JOptionPane.showMessageDialog(null, "error: day, month, and year inputs must be integers!");
+            JOptionPane.showMessageDialog(null, "Incorrect date entry. Day, month, and year inputs must be integers!");
             return "data insertion error, entry not looked up";
         }
         outputArea.setText("looking up record ...");
@@ -344,6 +344,8 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         mins.setText("");
         secs.setText("");
         dist.setText("");
+        repetitions_where_terrain_JTF.setText("");
+        recovery_none_tempo_JTF.setText("");
 
     }// blankDisplay
     // Fills the input fields on the display for testing purposes only

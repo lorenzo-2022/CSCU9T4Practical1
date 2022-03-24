@@ -6,36 +6,53 @@ import java.util.*;
 
 
 public class TrainingRecord {
-    private List<Entry> tr;
+    private List<Entry> trainingRecord;
     
     public TrainingRecord() {
-        tr = new ArrayList<Entry>();
+        trainingRecord = new ArrayList<Entry>();
     } //constructor
     
     // add a record to the list
-   public void addEntry(Entry e){
+   public void addEntry(Entry entry) {
        //I need to make sure that the entry I want to add to my records is unique.
        //name, day, month, and year is a unique key for running records (athletes do at most one run per day)
-       boolean entryInList = false;
-       ListIterator<Entry> iter = tr.listIterator();
-       while (iter.hasNext()) {
-           Entry current = iter.next();
-           if (current.getName() == e.getName() &&
-           current.getDay() == e.getDay() &&
-           current.getMonth() == e.getMonth() &&
-           current.getYear() == e.getYear()){
-               JOptionPane.showMessageDialog(null, "error: entry has already been added!");
-               entryInList = true;
-           }
+       if (isUnique(entry)) {
+           trainingRecord.add(entry);
        }
-        if (!entryInList){
-            tr.add(e);
+       else {
+           JOptionPane.showMessageDialog(null, "error: entry has already been added!");
+       }
+   }
+
+    public boolean isUnique (Entry entry) {
+        boolean isUnique = true;
+
+        ListIterator<Entry> recordIterator = trainingRecord.listIterator();
+
+        while (recordIterator.hasNext()) {
+            Entry currentRecord = recordIterator.next();
+
+            //troubleshooting
+            System.out.println(currentRecord.getName()+" vs entry: "+entry.getName()+"\n"+
+                    currentRecord.getDay()+ " vs entry day: "+ entry.getDay()+"\n"+
+                    currentRecord.getMonth()+ " vs entry month: " + entry.getMonth()+"\n"+
+                    currentRecord.getYear() + " vs entry year: "+entry.getYear()+"\n");
+
+            if (currentRecord.getName().equals(entry.getName()) &&
+                    currentRecord.getDay() == entry.getDay() &&
+                    currentRecord.getMonth() == entry.getMonth() &&
+                    currentRecord.getYear() == entry.getYear()){
+                isUnique = false;
+                System.out.println(isUnique); //this false is not getting triggered!!!
+            }
         }
-   } // addClass
+        System.out.println(isUnique);
+        return isUnique;
+    }
    
    // look up the entry of a given day and month
    public String lookupEntryByDate(int d, int m, int y) {
-       ListIterator<Entry> iter = tr.listIterator();
+       ListIterator<Entry> iter = trainingRecord.listIterator();
        String result = "";
        while (iter.hasNext()) {
           Entry current = iter.next();
@@ -52,7 +69,7 @@ public class TrainingRecord {
     // look up entry of a given name
     public String findAllByName(String inputName) {
         String result = "";
-        for (Entry current : tr) {
+        for (Entry current : trainingRecord) {
             if (current.getName().equals(inputName)) {
                 result = result + current.getEntry();
             }
@@ -63,11 +80,11 @@ public class TrainingRecord {
 
    // Count the number of entries
    public int getNumberOfEntries(){
-       return tr.size();
+       return trainingRecord.size();
    }
    // Clear all entries
    public void clearAllEntries(){
-       tr.clear();
+       trainingRecord.clear();
    }
 
     //remove entry with given name, day, month, year
@@ -79,7 +96,7 @@ public class TrainingRecord {
         Entry toBeRemoved = null;
 
         //new list iterator to iterate through the training record objects
-        ListIterator<Entry> iterator = tr.listIterator();
+        ListIterator<Entry> iterator = trainingRecord.listIterator();
         //while loop to loop through iterator
         while (iterator.hasNext()) {
             //selecting the next record in our list of records
@@ -94,7 +111,7 @@ public class TrainingRecord {
 
         //removing the entry with the same details as those provided by the user if one was found
         if (toBeRemoved != null) {
-            tr.remove(toBeRemoved);
+            trainingRecord.remove(toBeRemoved);
         }
 
         //returning the result message to the method called, saying which entry was removed
