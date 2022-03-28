@@ -7,10 +7,7 @@
     <list default="true" id="84ddc0c1-d389-4f9e-84c5-20ee185a9561" name="Changes" comment="task 14 added weekly distance button - tried to implement functionality but having trouble getting it to output the distances">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/CycleEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/CycleEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/Entry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SprintEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SprintEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SwimEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/SwimEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +162,7 @@
       <workItem from="1648057413384" duration="59000" />
       <workItem from="1648057555902" duration="25513000" />
       <workItem from="1648138673659" duration="87000" />
+      <workItem from="1648460888092" duration="4512000" />
     </task>
     <task id="LOCAL-00001" summary="in the process of tasks 6 through 8. pushing from a mac - still have duplicate issue - still need to fix up entry super class (and probably addEntry method too) to deal with extra object attributes of the new entry subclasses">
       <created>1647958092205</created>
@@ -250,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648137278627</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="task 14 added weekly distance button - tried to implement functionality but having trouble getting it to output the distances">
+      <created>1648138816365</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1648138816365</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

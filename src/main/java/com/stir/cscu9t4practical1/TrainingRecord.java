@@ -122,8 +122,9 @@ public class TrainingRecord {
         //current date and time
         Calendar rightNow = Calendar.getInstance();
         //Calendar's add method adds or subtracts the specified amount of time to the given calendar field
-        rightNow.add(Calendar.DATE, -7);
-        Calendar aWeekAgo = rightNow;
+        Calendar aWeekAgo = Calendar.getInstance();
+        aWeekAgo.add(Calendar.DATE, -7);
+
 
         //a for each loop --> for each element in the list
         for (Entry record : trainingRecord){

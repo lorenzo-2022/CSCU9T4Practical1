@@ -49,6 +49,30 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         TrainingRecordGUI applic = new TrainingRecordGUI();
     } // main
 
+    //a test method which is useful for testing the program with a pre-filled athlete named Mo
+    public void test(){
+        //run test
+        String name = "Mo";
+        int m = 3;
+        int d = 24;
+        int y = 2022;
+        int h = 1;
+        int mm = 2;
+        int s =3;
+        float km =4;
+        int reps = 2;
+        int recovery = 3;
+        SprintEntry se1 = new SprintEntry(name,d,m,y,h,mm,s,km,reps,recovery);
+        d = d + 1;
+        SprintEntry se2 = new SprintEntry(name,d,m, y, h, mm, s, km, reps, recovery);
+        d = d + 1;
+        SprintEntry se3 = new SprintEntry(name, d, m, y,h,mm,s,km,reps,recovery);
+
+        myAthletes.addEntry(se1);
+        myAthletes.addEntry(se2);
+        myAthletes.addEntry(se3);
+    }
+
     // set up the GUI 
     public TrainingRecordGUI() {
         super("Training Record");
@@ -129,6 +153,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
 
         // To save typing in new entries while testing, uncomment
         // the following lines (or add your own test cases)
+        test();
         
     } // constructor
 
